@@ -103,6 +103,7 @@ res.cookie("token", token, {
 ```
 
 🌍 Environment Variables (Backend)
+---
 PORT=8080
 JWT_SECRET=your_jwt_secret
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/dbname
