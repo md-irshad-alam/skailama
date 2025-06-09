@@ -19,7 +19,7 @@ const ProjectList = ({ SetshowCreatePage, showCreateProject }) => {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:8080/api/project/getAll", {
+      .get("https://skailama-3kpj.onrender.com/api/project/getAll", {
         withCredentials: true,
       })
       .then((res) => {

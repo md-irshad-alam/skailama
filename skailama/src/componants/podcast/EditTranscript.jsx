@@ -22,7 +22,7 @@ const EditTranscript = ({
   const handleSave = () => {
     axios
       .put(
-        `http://localhost:8080/api/transcript/update/${productId}`,
+        `https://skailama-3kpj.onrender.com/api/transcript/update/${productId}`,
         { transcript: tempTranscript },
         {
           withCredentials: true,

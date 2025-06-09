@@ -41,7 +41,7 @@ const PodcastSidebar = () => {
   const [user, setusers] = useState([]);
   const getLoggeduser = () => {
     axios
-      .get("http://localhost:8080/api/auth/profile", {
+      .get("https://skailama-3kpj.onrender.com/api/auth/profile", {
         withCredentials: true,
       })
       .then((res) => setusers(res.data.user))

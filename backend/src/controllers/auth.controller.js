@@ -69,13 +69,18 @@ const loginUser = async (req, res) => {
     );
 
     const isProduction = process.env.NODE_ENV === "production";
+    // res.cookie("token", token, {
+    //   httpOnly: true,
+    //   secure: isProduction,
+    //   sameSite: isProduction ? "strict" : "lax",
+    //   maxAge: 24 * 60 * 60 * 1000,
+    // });
     res.cookie("token", token, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: isProduction ? "strict" : "lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
     });
-
     res.status(200).json({ message: "Login successful" });
   } catch (error) {
     console.error("Error in loginUser:", error);

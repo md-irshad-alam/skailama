@@ -41,7 +41,7 @@ const PodcastCreate = () => {
   const handleLogout = async () => {
     const res = await axios
       .get(
-        "http://localhost:8080/api/auth/logout",
+        "https://skailama-3kpj.onrender.com/api/auth/logout",
 
         {
           withCredentials: true,

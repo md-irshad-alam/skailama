@@ -39,7 +39,7 @@ const ProjectCreatingModal = ({
       setProjecctDetails(input);
       axios
         .post(
-          "http://localhost:8080/api/project/create",
+          "https://skailama-3kpj.onrender.com/api/project/create",
           {
             name: input,
           },
@@ -48,7 +48,7 @@ const ProjectCreatingModal = ({
           }
         )
         .then((res) => toast.success(res.data.message))
-        .catch((err) => toast.warn(err.responce.data.message));
+        .catch((err) => toast.warn(err.response.data.message));
 
       setTimeout(() => {
         SetshowCreatePage(false);

@@ -45,9 +45,13 @@ const YoutubeUploadModel = ({ setPodcastDetails, setopen, setIsShowTable }) => {
       projectId: projectId,
     };
     axios
-      .post("http://localhost:8080/api/transcript/create", payload, {
-        withCredentials: true,
-      })
+      .post(
+        "https://skailama-3kpj.onrender.com/api/transcript/create",
+        payload,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setIsShowTable(true);
         toast.success(res.data.message);

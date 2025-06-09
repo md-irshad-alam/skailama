@@ -1,17 +1,16 @@
+"use client";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
+
 export default function AuthPage() {
   const router = useRouter();
+
   const [isLogin, setisLogin] = useState(true);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+
   const [inputChange, setInputChange] = useState("");
 
   const handleChange = (event) => {
@@ -24,7 +23,7 @@ export default function AuthPage() {
     try {
       if (isLogin) {
         const res = await axios.post(
-          "http://localhost:8080/api/auth/login",
+          "https://skailama-3kpj.onrender.com/api/auth/login",
           {
             email: inputChange.email,
             password: inputChange.password,
@@ -40,7 +39,7 @@ export default function AuthPage() {
         }, 500);
       } else {
         const res = await axios.post(
-          "http://localhost:8080/api/auth/register",
+          "https://skailama-3kpj.onrender.com/api/auth/register",
           {
             name: inputChange.name,
             email: inputChange.email,
@@ -54,8 +53,10 @@ export default function AuthPage() {
       toast.warn(error.response?.data.message);
     }
   };
+
   return (
     <>
+      <ToastContainer />
       <Head>
         <title>Ques.AI Login</title>
       </Head>

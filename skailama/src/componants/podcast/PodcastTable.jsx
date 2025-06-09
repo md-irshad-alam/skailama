@@ -42,7 +42,7 @@ const PodcastTable = ({
   const fetchData = () => {
     axios
       .get(
-        `http://localhost:8080/api/transcript/getAll?q=${productid}`,
+        `https://skailama-3kpj.onrender.com/api/transcript/getAll?q=${productid}`,
 
         {
           withCredentials: true,
