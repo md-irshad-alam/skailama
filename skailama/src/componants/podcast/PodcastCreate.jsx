@@ -24,6 +24,10 @@ const PodcastCreate = () => {
   const [productId, setProductId] = useState(null);
   const [transcript, setTranscript] = useState(null);
 
+  const handleClose = () => {
+    setopen(false);
+  };
+
   const handleCloseTable = () => {
     setIsShowTable(false);
   };
@@ -57,8 +61,8 @@ const PodcastCreate = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-10">
             <p className="flex items-center gap-x-2 text-md md:text-lg font-semibold text-gray-400">
               <IoMdHome className="text-2xl md:text-2xl" />
-              {/* <span className="text-gray-500 ">Home Page</span>/
-              <span className="text-gray-500 ">{url}</span>/ */}
+              <span className="text-gray-500 ">Home Page</span>/
+              {/* <span className="text-gray-500 ">{url}</span>/ */}
               <Breadcrumb />
               <span className="text-purple-700 ">Add your podcast</span>
             </p>
