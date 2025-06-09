@@ -14,6 +14,7 @@ import EditTranscript from "./EditTranscript";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 const PodcastCreate = () => {
   const url = "Sample Project";
   const [isOpen, setopen] = useState(false);
@@ -23,10 +24,6 @@ const PodcastCreate = () => {
   const [productId, setProductId] = useState(null);
   const [transcript, setTranscript] = useState(null);
 
-  const handleClose = () => {
-    setopen(false);
-  };
-
   const handleCloseTable = () => {
     setIsShowTable(false);
   };
@@ -34,9 +31,6 @@ const PodcastCreate = () => {
     setopen(true);
   };
 
-  const handleBacktoHome = () => {
-    setShowTranscript(true);
-  };
   const navigate = useRouter();
   const handleLogout = async () => {
     const res = await axios
@@ -63,8 +57,9 @@ const PodcastCreate = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-10">
             <p className="flex items-center gap-x-2 text-md md:text-lg font-semibold text-gray-400">
               <IoMdHome className="text-2xl md:text-2xl" />
-              <span className="text-gray-500 ">Home Page</span>/
-              <span className="text-gray-500 ">{url}</span>/
+              {/* <span className="text-gray-500 ">Home Page</span>/
+              <span className="text-gray-500 ">{url}</span>/ */}
+              <Breadcrumb />
               <span className="text-purple-700 ">Add your podcast</span>
             </p>
             <div className="flex justify-center items-center gap-x-4 mt-4 md:mt-0">
