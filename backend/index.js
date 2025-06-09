@@ -13,7 +13,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000", // dynamic origin
+    origin: process.env.CLIENT_URL,
+    methods: ["POST", "GET", "DELETE", "PUT", "PATCH", "OPTIONS"],
     credentials: true,
   })
 );
