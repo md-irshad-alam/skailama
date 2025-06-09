@@ -34,10 +34,7 @@ export default function Breadcrumb() {
 
           return (
             <li key={href}>
-              <Link
-                href={href}
-                style={{ textDecoration: "underline", color: "blue" }}
-              >
+              <Link href={href} style={{ color: "gray" }}>
                 {label}
               </Link>
               {index < pathSegments.length - 1 && (

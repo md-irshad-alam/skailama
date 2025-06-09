@@ -61,10 +61,10 @@ const PodcastCreate = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-10">
             <p className="flex items-center gap-x-2 text-md md:text-lg font-semibold text-gray-400">
               <IoMdHome className="text-2xl md:text-2xl" />
-              <span className="text-gray-500 ">Home Page</span>/
-              {/* <span className="text-gray-500 ">{url}</span>/ */}
-              <Breadcrumb />
-              <span className="text-purple-700 ">Add your podcast</span>
+              <span className="text-gray-500">
+                <Breadcrumb />
+              </span>
+              /<span className="text-purple-700 ">Add your podcast</span>
             </p>
             <div className="flex justify-center items-center gap-x-4 mt-4 md:mt-0">
               <button className="p-2 rounded-full hover:bg-indigo-100 transition">
